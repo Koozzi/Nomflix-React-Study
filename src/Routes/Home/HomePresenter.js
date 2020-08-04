@@ -28,7 +28,7 @@ const HomePresenter = ({nowPlaying, popular, upcoming, loading, error}) => loadi
         </Section>)}
 
         {upcoming && upcoming.length > 0 && (
-        <Section title="Upcoming Movie">
+        <Section title="Upcoming Movies">
             {upcoming.map(movie => (
             <Poster 
                 key={movie.id}
@@ -56,7 +56,6 @@ const HomePresenter = ({nowPlaying, popular, upcoming, loading, error}) => loadi
             />
         ))}
         </Section>)}
-        
         {error && <Message color="#d63031" text={error}/>}
     </Container>
 
