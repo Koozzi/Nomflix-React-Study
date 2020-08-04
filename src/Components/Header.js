@@ -15,11 +15,9 @@ const Header = styled.header`
     z-index: 10;
     box-shadow: 0px 1px 5px 2px rgba(0, 0, 0, 0.8);
 `;
-
 const List = styled.ul`
     display: flex;
 `;
-
 const Item = styled.li`
     width: 80px;
     height: 50px;
@@ -28,7 +26,6 @@ const Item = styled.li`
         ${props => (props.current ? "#3498db" : "transparent")};
     transition: border-bottom 0.5s ease-in-out;
 `;
-
 const SLink = styled(Link)`
     height: 50px;
     display: flex;
