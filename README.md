@@ -9,13 +9,7 @@
 # npm i axios
 ```
 
-## API Verbs
-* Now Playing
-* Top Rated(TV, Movie)
-* Popular (TV, Movie)
-* Upcoming (TV, Movie)
-* Airing Today (TV)
-* TV show detail
-* Movie detail
-* Search (Movie, TV)
+## API 
+
+[The Movie Database](https://www.themoviedb.org/)
 
