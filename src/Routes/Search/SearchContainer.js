@@ -44,9 +44,9 @@ class SearchContainer extends Component {
             <SearchPresenter
                 movieResults={movieResults}
                 tvResults={tvResults}
+                error={error}
                 searchTerm={searchTerm}
                 loading={loading}
-                error={error}
                 handleSubmit={this.handleSubmit}
             />
         );
