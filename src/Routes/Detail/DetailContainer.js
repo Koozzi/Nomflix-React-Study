@@ -8,7 +8,22 @@ class DetailContainer extends Component {
         loading: true
     };
 
+    async componentDidMount() {
+        const {
+            match : {
+                params: {id}
+            },
+            history: {push}
+        } = this.props;
+        
+        const parseID = parseInt(id);
+        if(isNaN(parseID)){
+            return push("/");
+        }
+    }
+
     render() {
+        console.log(this.props);
         const { result, error, loading } = this.state;
         return (
             <DetailPresenter 
