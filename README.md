@@ -1,4 +1,4 @@
-# NomFlix - 1
+# NomFlix - React Study #1
 
 ## Installation
 ```
