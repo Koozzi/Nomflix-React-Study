@@ -24,7 +24,7 @@ class HomeContainer extends Component {
             const {
                 data: { results: popular }
             } = await movieAPI.popular();
-
+            
             this.setState({
                 nowPlaying: nowPlaying,
                 upcoming: upcoming,
