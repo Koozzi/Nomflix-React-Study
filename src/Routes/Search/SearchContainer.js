@@ -11,24 +11,37 @@ class SearchContainer extends Component {
         error: null
     };
 
-    handleSubmit = () => {
+    handleSubmit = (event) => {
+        event.preventDefault();
         const { searchTerm } = this.state;
         if(searchTerm !== ""){
             this.searchByTerm();
         }
     }
 
+    updateTerm = (event) => {
+        const {
+            target: { value }
+        } = event;
+        console.log(value);
+        this.setState({
+            searchTerm: value
+        })
+    }
+
     searchByTerm = async() => {
         const { searchTerm } = this.state;
+        this.setState({ loading: true });
         try {
             const {
-                data: {results:movieResults}
+                data: { results:movieResults }
             } = await movieAPI.search(searchTerm);
+            
             const {
-                data: {results:showResults}
+                data: { results:tvResults }
             } = await tvAPI.search(searchTerm);
             
-            this.setState({ loading: true });
+            this.setState({ movieResults, tvResults });
         }
         catch {
             this.setState({ errer: "Can't find result" });
@@ -48,6 +61,7 @@ class SearchContainer extends Component {
                 searchTerm={searchTerm}
                 loading={loading}
                 handleSubmit={this.handleSubmit}
+                updateTerm={this.updateTerm}
             />
         );
     }
